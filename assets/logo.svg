@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 170" role="img" aria-label="ProCredit Financing Corp.">
+  <defs>
+    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6a8d8"/>
+      <stop offset="45%" stop-color="#b9c6f2"/>
+      <stop offset="100%" stop-color="#6fd6e0"/>
+    </linearGradient>
+  </defs>
+  <g>
+    <rect x="30" y="10" width="26" height="150" rx="4" fill="#1c2340"/>
+    <path d="M56 10
+             C110 10 130 40 130 65
+             C130 92 108 112 66 112
+             L56 112 L56 84 L64 84
+             C90 84 100 76 100 65
+             C100 54 90 40 56 40 Z" fill="#1c2340"/>
+    <path d="M18 46 C40 30 66 26 84 40 C68 42 52 52 44 70 C36 88 40 108 56 122
+             C36 116 16 96 14 72 C13 62 14 53 18 46 Z" fill="url(#ribbon)"/>
+  </g>
+  <text x="150" y="88" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="58" fill="#0d8ea3" letter-spacing="1">ROCREDIT</text>
+  <text x="151" y="128" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="26" fill="#16205c" letter-spacing="1.5">FINANCING CORP.</text>
+  <rect x="151" y="98" width="440" height="3" fill="#cfd8ea"/>
+</svg>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ProCredit Financing Corp. — Loan List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="brand">
+      <img src="assets/logo.svg" alt="ProCredit Financing Corp." class="logo">
+    </header>
+
+    <section class="list-card" id="loanCard">
+      <div class="filter-bar">
+        <div class="pills" id="pillGroup">
+          <button class="pill active" data-filter="all">All</button>
+          <button class="pill" data-filter="collateral">Collateral</button>
+          <button class="pill" data-filter="reject">Reject</button>
+          <button class="pill" data-filter="showall">Show all</button>
+          <button class="pill" data-filter="request">Request</button>
+        </div>
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search ID or applicant…">
+          <span class="search-icon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="white" stroke-width="2.5"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </span>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <div class="grid-row table-header">
+          <div class="col-status"></div>
+          <div class="col-id">ID:</div>
+          <div class="col-type">Loan Type</div>
+          <div class="col-applicant">Applicant(s)</div>
+          <div class="col-amount">Loan amount</div>
+          <div class="col-terms">Terms</div>
+          <div class="col-statuslabel">Status</div>
+        </div>
+        <div class="table-body" id="tableBody"></div>
+        <p class="empty-state" id="emptyState" hidden>No matching loan records.</p>
+      </div>
+
+      <div class="pagination-bar">
+        <button class="btn-page">NEXT PAGE</button>
+        <button class="btn-all">ALL</button>
+        <div class="page-info">Items per page <strong>12</strong></div>
+        <div class="page-range" id="pageRange">1-12 of 12</div>
+        <button class="btn-page">NEXT PAGE</button>
+      </div>
+    </section>
+
+    <section class="form-card">
+      <h2>Add Loan Entry</h2>
+      <form id="loanForm">
+        <div class="field">
+          <label for="inputId">ID</label>
+          <input type="text" id="inputId" placeholder="e.g. 09207137595" required>
+        </div>
+        <div class="field">
+          <label for="inputType">Loan Type</label>
+          <select id="inputType">
+            <option>Personal loan</option>
+            <option>Emergency loan</option>
+            <option>Business loan</option>
+          </select>
+        </div>
+        <div class="field field-wide">
+          <label for="inputApplicant">Applicant(s)</label>
+          <input type="text" id="inputApplicant" placeholder="e.g. Juan Dela Cruz" required>
+        </div>
+        <div class="field">
+          <label for="inputAmount">Loan amount</label>
+          <input type="number" id="inputAmount" min="0" step="0.01" placeholder="0.00" required>
+        </div>
+        <div class="field">
+          <label for="inputTerms">Terms (months)</label>
+          <input type="number" id="inputTerms" min="1" step="1" placeholder="12" required>
+        </div>
+        <div class="field">
+          <label for="inputStatus">Status</label>
+          <select id="inputStatus">
+            <option value="approved">Approved</option>
+            <option value="declined">Declined</option>
+          </select>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-confirm">Add / Confirm</button>
+          <button type="button" class="btn-reset" id="resetDefaultsBtn">Reset to defaults</button>
+          <button type="button" class="btn-export" id="exportBtn">Export table as PNG</button>
+        </div>
+      </form>
+    </section>
+
+  </div>
+
+  <script src="vendor/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

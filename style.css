@@ -1,0 +1,369 @@
+:root {
+  --bg-teal: #86d3d9;
+  --pill-green: #3fcf9e;
+  --pill-green-dark: #2fae85;
+  --navy: #0f1f3d;
+  --navy-2: #16205c;
+  --approve-green: #2fae5a;
+  --decline-red: #e0473f;
+  --orange: #e8a33d;
+  --orange-dark: #c98a2c;
+  --pink: #e0397a;
+  --card-radius: 22px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+  background: var(--bg-teal);
+  color: var(--navy);
+}
+
+.page {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 28px 24px 60px;
+}
+
+.brand {
+  text-align: center;
+  padding: 10px 0 24px;
+}
+
+.logo {
+  width: min(560px, 90%);
+  height: auto;
+}
+
+/* ---------- Loan list card (exported to PNG) ---------- */
+
+.list-card {
+  background: var(--bg-teal);
+  padding: 4px;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border-radius: 999px;
+  padding: 10px 14px;
+  box-shadow: 0 4px 14px rgba(15, 31, 61, 0.12);
+  flex-wrap: wrap;
+}
+
+.pills {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.pill {
+  border: 2px solid transparent;
+  background: var(--pill-green);
+  color: white;
+  font-weight: 700;
+  font-size: 13px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.pill:hover { background: var(--pill-green-dark); }
+
+.pill.active {
+  background: var(--pill-green-dark);
+  border-color: rgba(255,255,255,0.75);
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: var(--navy);
+  border-radius: 999px;
+  padding: 8px 8px 8px 16px;
+  gap: 8px;
+}
+
+.search-box input {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 13px;
+  outline: none;
+  width: 150px;
+}
+
+.search-box input::placeholder { color: rgba(255,255,255,0.6); }
+
+.search-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.table-wrap {
+  margin-top: 18px;
+}
+
+.grid-row {
+  display: grid;
+  grid-template-columns: 46px 1.3fr 1.2fr 1.6fr 1.1fr 0.9fr 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-header {
+  padding: 4px 16px 10px;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 14px;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.loan-row {
+  background: white;
+  border-radius: 12px;
+  padding: 12px 16px;
+  box-shadow: 0 3px 8px rgba(15, 31, 61, 0.10);
+  font-size: 14px;
+  position: relative;
+}
+
+.loan-row .col-id { font-weight: 700; }
+
+.col-status {
+  display: flex;
+  justify-content: center;
+}
+
+.status-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2.5px solid;
+  font-weight: 900;
+  font-size: 15px;
+  background: white;
+}
+
+.status-icon.approved {
+  color: var(--approve-green);
+  border-color: var(--approve-green);
+}
+
+.status-icon.declined {
+  color: var(--decline-red);
+  border-color: var(--decline-red);
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 999px;
+  border: 2px solid;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.status-pill.approved {
+  color: var(--approve-green);
+  border-color: var(--approve-green);
+}
+
+.status-pill.declined {
+  color: var(--decline-red);
+  border-color: var(--decline-red);
+}
+
+.empty-state {
+  text-align: center;
+  color: var(--navy);
+  opacity: 0.7;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.pagination-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 18px;
+  padding: 6px 8px;
+  flex-wrap: wrap;
+}
+
+.btn-page {
+  background: linear-gradient(180deg, var(--orange), var(--orange-dark));
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.btn-all {
+  background: var(--pink);
+  color: white;
+  border: 2px solid white;
+  outline: 2px solid var(--pink);
+  font-weight: 800;
+  font-size: 12px;
+  padding: 10px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.page-info, .page-range {
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* ---------- Form card ---------- */
+
+.form-card {
+  background: white;
+  border-radius: var(--card-radius);
+  padding: 24px 28px 28px;
+  margin-top: 32px;
+  box-shadow: 0 4px 14px rgba(15, 31, 61, 0.12);
+}
+
+.form-card h2 {
+  margin: 0 0 16px;
+  font-size: 20px;
+  color: var(--navy-2);
+}
+
+#loanForm {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-wide { grid-column: span 1; }
+
+.field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.field input, .field select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1.5px solid #cfd8ea;
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+}
+
+.field input:focus, .field select:focus {
+  border-color: var(--pill-green);
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.btn-confirm {
+  background: var(--pill-green-dark);
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-confirm:hover { background: #268e6c; }
+
+.btn-reset {
+  background: white;
+  color: var(--navy);
+  border: 1.5px solid #cfd8ea;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-export {
+  background: var(--navy);
+  color: white;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.btn-export:hover { background: var(--navy-2); }
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(12px);
+  background: var(--navy);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 50;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 800px) {
+  .grid-row { grid-template-columns: 34px 1.2fr 1fr 1.4fr 1fr 0.8fr 1fr; font-size: 12px; }
+  #loanForm { grid-template-columns: 1fr 1fr; }
+  .btn-export { margin-left: 0; }
+}
+
+@media (max-width: 560px) {
+  .grid-row { grid-template-columns: 30px repeat(6, minmax(70px, 1fr)); overflow-x: auto; }
+  .table-wrap { overflow-x: auto; }
+  #loanForm { grid-template-columns: 1fr; }
+}
