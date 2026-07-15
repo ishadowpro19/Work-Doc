@@ -1,23 +1,63 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 170" role="img" aria-label="ProCredit Financing Corp.">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" role="img" aria-label="ProCredit Financing Corp.">
   <defs>
-    <linearGradient id="ribbon" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#f6a8d8"/>
-      <stop offset="45%" stop-color="#b9c6f2"/>
-      <stop offset="100%" stop-color="#6fd6e0"/>
+    <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a3260"/>
+      <stop offset="55%" stop-color="#1c2344"/>
+      <stop offset="100%" stop-color="#12172c"/>
     </linearGradient>
+    <linearGradient id="ribbonGrad" gradientUnits="userSpaceOnUse" x1="4" y1="26" x2="160" y2="188">
+      <stop offset="0%" stop-color="#f0a0d0"/>
+      <stop offset="32%" stop-color="#d6b3e4"/>
+      <stop offset="55%" stop-color="#a9c3ee"/>
+      <stop offset="80%" stop-color="#7fd6e6"/>
+      <stop offset="100%" stop-color="#5fd2de"/>
+    </linearGradient>
+    <linearGradient id="ribbonHighlight" gradientUnits="userSpaceOnUse" x1="4" y1="26" x2="100" y2="120">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="shadowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0b1330" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0b1330" stop-opacity="0"/>
+    </radialGradient>
   </defs>
-  <g>
-    <rect x="30" y="10" width="26" height="150" rx="4" fill="#1c2340"/>
-    <path d="M56 10
-             C110 10 130 40 130 65
-             C130 92 108 112 66 112
-             L56 112 L56 84 L64 84
-             C90 84 100 76 100 65
-             C100 54 90 40 56 40 Z" fill="#1c2340"/>
-    <path d="M18 46 C40 30 66 26 84 40 C68 42 52 52 44 70 C36 88 40 108 56 122
-             C36 116 16 96 14 72 C13 62 14 53 18 46 Z" fill="url(#ribbon)"/>
-  </g>
-  <text x="150" y="88" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="58" fill="#0d8ea3" letter-spacing="1">ROCREDIT</text>
-  <text x="151" y="128" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="26" fill="#16205c" letter-spacing="1.5">FINANCING CORP.</text>
-  <rect x="151" y="98" width="440" height="3" fill="#cfd8ea"/>
+
+  <ellipse cx="155" cy="272" rx="135" ry="16" fill="url(#shadowGrad)"/>
+
+  <rect x="50" y="40" width="58" height="232" rx="10" fill="url(#navyGrad)"/>
+
+  <path d="M108,40
+           C224,28 296,64 296,122
+           C296,182 226,213 138,213
+           L108,213
+           L108,158
+           L131,158
+           C197,158 220,139 220,115
+           C220,89 197,66 131,66
+           L108,66
+           Z" fill="#1c2344"/>
+  <path d="M108,40 L108,66 L121,66 L121,40 Z" fill="url(#navyGrad)"/>
+
+  <path d="M38,26
+           C16,32 4,52 6,78
+           C8,104 22,124 44,138
+           C56,146 60,158 52,168
+           C68,164 78,150 76,132
+           C74,116 62,102 48,90
+           C36,80 32,64 40,50
+           C46,40 52,32 38,26 Z
+           M52,168
+           C78,160 96,140 98,114
+           C100,92 90,72 74,58
+           C98,44 130,50 146,74
+           C164,102 158,144 128,170
+           C108,188 82,190 62,178
+           C58,175 55,172 52,168 Z" fill="url(#ribbonGrad)"/>
+  <path d="M38,26 C16,32 4,52 6,78 C8,100 19,118 38,132
+           C30,112 28,92 34,74 C38,60 46,48 40,50
+           C32,44 36,34 38,26 Z" fill="url(#ribbonHighlight)" opacity="0.55"/>
+  <path d="M52,168 C58,164 64,159 68,153 L80,163 C75,170 68,176 60,180 Z" fill="#ffffff" opacity="0.4"/>
+
+  <text x="320" y="150" font-family="'Segoe UI', Arial, sans-serif" font-weight="800" font-size="62" fill="#0e93ab" letter-spacing="1">ROCREDIT</text>
+  <text x="322" y="196" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="26" fill="#17225e" letter-spacing="1.5">FINANCING CORP.</text>
 </svg>
