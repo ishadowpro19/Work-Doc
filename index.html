@@ -10,7 +10,12 @@
   <div class="page">
 
     <header class="brand">
-      <img src="assets/logo.svg" alt="ProCredit Financing Corp." class="logo">
+      <img src="assets/logo.svg" alt="ProCredit Financing Corp." class="logo" id="logoImg">
+      <div class="logo-controls">
+        <label class="logo-upload-btn" for="logoUpload">Upload logo</label>
+        <input type="file" id="logoUpload" accept="image/*" hidden>
+        <button type="button" id="logoResetBtn" class="logo-reset-btn">Reset to default</button>
+      </div>
     </header>
 
     <section class="list-card" id="loanCard">

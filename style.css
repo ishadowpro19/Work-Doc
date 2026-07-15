@@ -35,6 +35,31 @@ body {
 .logo {
   width: min(560px, 90%);
   height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.logo-controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.logo-upload-btn, .logo-reset-btn {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1.5px solid var(--navy);
+  background: white;
+  color: var(--navy);
+}
+
+.logo-upload-btn:hover, .logo-reset-btn:hover {
+  background: var(--navy);
+  color: white;
 }
 
 /* ---------- Loan list card (exported to PNG) ---------- */

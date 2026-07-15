@@ -1,5 +1,7 @@
 (function () {
   const STORAGE_KEY = 'procredit-loan-entries-v2';
+  const LOGO_STORAGE_KEY = 'procredit-logo-v1';
+  const LOGO_MAX_BYTES = 3 * 1024 * 1024;
 
   const DEFAULT_ENTRIES = [
     { id: '09174920581', type: 'Personal loan', applicant: 'Maria Santos Reyes', amount: 150000, terms: 18, status: 'approved' },
@@ -17,6 +19,10 @@
   const exportBtn = document.getElementById('exportBtn');
   const resetDefaultsBtn = document.getElementById('resetDefaultsBtn');
   const loanCard = document.getElementById('loanCard');
+  const logoImg = document.getElementById('logoImg');
+  const logoUpload = document.getElementById('logoUpload');
+  const logoResetBtn = document.getElementById('logoResetBtn');
+  const defaultLogoSrc = logoImg ? logoImg.getAttribute('src') : '';
 
   let entries = loadEntries();
   let activeFilter = 'all';
@@ -127,6 +133,45 @@
     showToast('Loan entry added to the table.');
   });
 
+  function loadLogo() {
+    try {
+      const saved = localStorage.getItem(LOGO_STORAGE_KEY);
+      if (saved && logoImg) logoImg.src = saved;
+    } catch (e) { /* storage unavailable */ }
+  }
+
+  if (logoUpload) {
+    logoUpload.addEventListener('change', (e) => {
+      const file = e.target.files && e.target.files[0];
+      if (!file) return;
+      if (!file.type.startsWith('image/')) {
+        showToast('Please choose an image file.');
+        return;
+      }
+      if (file.size > LOGO_MAX_BYTES) {
+        showToast('Logo image is too large (max 3MB).');
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = () => {
+        const dataUrl = reader.result;
+        logoImg.src = dataUrl;
+        try { localStorage.setItem(LOGO_STORAGE_KEY, dataUrl); } catch (e) { /* storage unavailable */ }
+        showToast('Logo updated.');
+      };
+      reader.readAsDataURL(file);
+      logoUpload.value = '';
+    });
+  }
+
+  if (logoResetBtn) {
+    logoResetBtn.addEventListener('click', () => {
+      logoImg.src = defaultLogoSrc;
+      try { localStorage.removeItem(LOGO_STORAGE_KEY); } catch (e) { /* storage unavailable */ }
+      showToast('Logo reset to default.');
+    });
+  }
+
   resetDefaultsBtn.addEventListener('click', () => {
     entries = DEFAULT_ENTRIES.slice();
     saveEntries();
@@ -151,5 +196,6 @@
     });
   });
 
+  loadLogo();
   render();
 })();
