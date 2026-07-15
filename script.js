@@ -1,14 +1,11 @@
 (function () {
-  const STORAGE_KEY = 'procredit-loan-entries-v1';
+  const STORAGE_KEY = 'procredit-loan-entries-v2';
 
   const DEFAULT_ENTRIES = [
-    { id: '09207137595', type: 'Personal loan', applicant: 'Ryan Guinto D', amount: 200000, terms: 24, status: 'declined' },
-    { id: '09265764964', type: 'Personal loan', applicant: 'Michelle Ramos Vicitacion', amount: 100000, terms: 12, status: 'approved' },
-    { id: '63345308', type: 'Personal loan', applicant: 'Ma. Cecelia dela Cruz', amount: 100000, terms: 12, status: 'declined' },
-    { id: '65195917', type: 'Emergency loan', applicant: 'Molina Rama', amount: 100000, terms: 36, status: 'approved' },
-    { id: '09164382512', type: 'Business loan', applicant: 'Rosie De La Cruz', amount: 100000, terms: 24, status: 'approved' },
-    { id: '09853426231', type: 'Emergency loan', applicant: 'Michael john Ramirez', amount: 300000, terms: 24, status: 'approved' },
-    { id: '0503129823', type: 'Emergency loan', applicant: 'Zagado Bautista', amount: 300000, terms: 48, status: 'approved' }
+    { id: '09174920581', type: 'Personal loan', applicant: 'Maria Santos Reyes', amount: 150000, terms: 18, status: 'approved' },
+    { id: '76221459', type: 'Emergency loan', applicant: 'Juan Carlo Bautista', amount: 120000, terms: 12, status: 'declined' },
+    { id: '09298317642', type: 'Business loan', applicant: 'Angelica Mae Fernandez', amount: 250000, terms: 30, status: 'approved' },
+    { id: '48930215', type: 'Personal loan', applicant: 'Ramon Dela Cruz Jr.', amount: 100000, terms: 12, status: 'declined' }
   ];
 
   const tableBody = document.getElementById('tableBody');
